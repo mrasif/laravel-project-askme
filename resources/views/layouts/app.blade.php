@@ -47,6 +47,7 @@
                             <li><a href="{{ route('register') }}"><i class="fa fa-user-plus"></i> Register</a></li>
                         @else
                             <li><a href="{{ route('questions.index') }}"><i class="fa fa-search"></i> Search</a></li>
+                            <li><a href="{{ route('questions.index') }}"><i class="fa fa-question-circle"></i> Questions</a></li>
                             <li><a href="{{ route('questions.create') }}"><i class="fa fa-pencil-square-o"></i> Ask</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
@@ -55,7 +56,12 @@
 
                                 <ul class="dropdown-menu">
                                   <li>
-                                      <a href="#" >
+                                      <a href="{{route('users.show',['id'=>Auth::user()->id])}}" >
+                                          My Profile
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="{{route('users.edit',['id'=>Auth::user()->id])}}" >
                                           Edit Profile
                                       </a>
                                   </li>

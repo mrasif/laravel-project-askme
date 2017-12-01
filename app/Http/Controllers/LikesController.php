@@ -37,7 +37,7 @@ class LikesController extends Controller
         $update=true;
         if($already_like==$isLike){
           $like->delete();
-          return ['remove',count($answer->likes->where('like','1')),count($answer->likes->where('like','0'))];
+          return ['remove',$answer->likes->where('like','1')->count(),$answer->likes->where('like','0')->count()];
         }
       }
       else{
@@ -54,10 +54,10 @@ class LikesController extends Controller
         $like->save();
       }
       if($isLike){
-        return ['like',count($answer->likes->where('like','1')),count($answer->likes->where('like','0'))];
+        return ['like',$answer->likes->where('like','1')->count(),$answer->likes->where('like','0')->count()];
       }
       else{
-        return ['dislike',count($answer->likes->where('like','1')),count($answer->likes->where('like','0'))];
+        return ['dislike',$answer->likes->where('like','1')->count(),$answer->likes->where('like','0')->count()];
       }
       return null;
     }

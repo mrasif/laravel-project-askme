@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -46,7 +47,8 @@ class UsersController extends Controller
      */
     public function show(User $user)
     {
-        //
+      $user=User::where('id',$user->id)->first();
+      return view('users.show',['user'=>$user]);
     }
 
     /**

@@ -20,9 +20,9 @@
             {!!$answer->description!!}
           </div>
           <div class="interaction" data-ansId="{{$answer->id}}">
-            <span>{{count($answer->likes->where('like','1'))}}</span>&nbsp;&nbsp;
+            <span>{{$answer->likes->where('like','1')->count()}}</span>&nbsp;&nbsp;
             <a class="like label {{$answer->likes->where('user_id',Auth::user()->id)->where('like','1')->first()?'label-primary':'label-default'}}" data="true" href="#"><i class="fa fa-thumbs-up" title="Like"></i></a>&nbsp;&nbsp;&nbsp;
-            <span>{{count($answer->likes->where('like','0'))}}</span>&nbsp;&nbsp;
+            <span>{{$answer->likes->where('like','0')->count()}}</span>&nbsp;&nbsp;
             <a class="like label {{$answer->likes->where('user_id',Auth::user()->id)->where('like','0')->first()?'label-primary':'label-default'}}" data="false" href="#"><i class="fa fa-thumbs-down" title="Dislike"></i></a>&nbsp;&nbsp;
             @if(Auth::user()->id==$answer->user_id || Auth::user()->role_id==1)
               <a href="{{ route('answers.edit',[$answer->id]) }}" class="label label-default"><i class="fa fa-edit" title="Edit"></i></a>&nbsp;&nbsp;
