@@ -28,21 +28,25 @@ class User extends Authenticatable
     ];
 
     public function role(){
+      // User has only one role
       return $this->belongsTo('App\Role');
     }
 
     public function questions()
     {
+      // User has many questions
       return $this->hasMany('App\Question');
     }
 
     public function answers()
     {
+      // User has many answer
       return $this->hasMany('App\Answer');
     }
 
     public function likes()
     {
+      // User can give many Likes
       return $this->hasMany('App\Like');
     }
 }

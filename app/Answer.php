@@ -15,16 +15,19 @@ class Answer extends Model
 
   public function user()
   {
+    // Answer has only one user
     return $this->belongsTo('App\User');
   }
 
   public function question()
   {
+    // Answer has only one question
     return $this->belongsTo('App\Question');
   }
 
   public function likes()
   {
+    // Answer has many likes
     return $this->hasMany('App\Like');
   }
 

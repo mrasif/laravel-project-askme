@@ -47,6 +47,7 @@ class UsersController extends Controller
      */
     public function show(User $user)
     {
+      // If User exists in database
       $user=User::where('id',$user->id)->first();
       return view('users.show',['user'=>$user]);
     }

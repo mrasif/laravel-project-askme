@@ -11,7 +11,7 @@
     <div class="panel-heading" style="background-color: #ddd;">
       <b>{{ $question->title }}</b><br/>
       Asked at {{$question->created_at}}, Has {{count($question->answers)}} answer(s).
-      &nbsp;Asked by {{$question->user->name}}
+      &nbsp;Asked by <a href="{{route('users.show',[$question->user->id])}}">{{$question->user->name}}</a>
     </div>
     <div class="panel-body">
       <p>{!!$question->description!!}</p>

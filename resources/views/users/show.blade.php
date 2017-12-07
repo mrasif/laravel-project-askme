@@ -10,10 +10,13 @@
             <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
           </div>
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Profile Information:</div>
                 <div class="panel-body">
-                    {{$user->email}}
+                    Email: {{$user->email}}<br/>
+                    City: {{$user->city}}<br/>
+                    Country: {{$user->country}}<br/>
                 </div>
+
             </div>
         </div>
     </div>

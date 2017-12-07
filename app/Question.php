@@ -14,11 +14,13 @@ class Question extends Model
 
   public function user()
   {
+    // Question has single user
     return $this->belongsTo('App\User');
   }
 
   public function answers()
   {
+    // Question has many answer
     return $this->hasMany('App\Answer');
   }
 }

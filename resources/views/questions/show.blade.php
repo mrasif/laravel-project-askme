@@ -12,7 +12,7 @@
   @foreach($answers as $answer)
   <div class="panel panel-default">
     <div class="panel-heading" style="background-color: #ddd;">
-      <b>{{$answer->user->name}}</b><br/>
+      <b><a href="{{route('users.show',[$answer->user->id])}}">{{$answer->user->name}}</a></b><br/>
       Posted at {{$answer->created_at}}
     </div>
     <div class="panel-body">

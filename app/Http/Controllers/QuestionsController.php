@@ -15,6 +15,7 @@ class QuestionsController extends Controller
      */
     public function index()
     {
+      // Getting all question
       $questions=Question::get();
       return view('questions.index',['questions'=>$questions]);
     }
@@ -37,6 +38,7 @@ class QuestionsController extends Controller
      */
     public function store(Request $request)
     {
+      // Checking user logged in or not ?
       if(Auth::check()){
         $question=Question::create([
           'title'=>$request->input('title'),

@@ -11,6 +11,7 @@ class Role extends Model
   ];
 
   public function users(){
+    // Role can be role of many users
     return $this->hasMany('App\User');
   }
 }
